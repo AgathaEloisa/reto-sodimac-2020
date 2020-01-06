@@ -1,12 +1,11 @@
 // import files of th views
-import { home } from './templates/home.js';
 import { login } from './templates/login.js';
 import { userFiles } from './templates/user-files.js';
 import { fileDetail } from './templates/file-detail.js';
 import { addNewFile } from './templates/add-new-file.js';
 
 const changeRoute = ( hash ) => {
-    if (hash === '' || hash === '#/' || hash === '#/home' || hash === '#/login' || hash === '#/user-files' || hash === '#/file-detail' || hash === '#/new-file')
+    if (hash === '' || hash === '#/' || hash === '#/login' || hash === '#/user-files' || hash === '#/file-detail' || hash === '#/new-file')
         return showViews(hash);    
     }
 
@@ -16,13 +15,10 @@ export const showViews = ( hash ) => {
 
     switch (route) {
         case '':
-            home();
+            login();
             break
         case '#/':
-            home();
-            break
-        case 'home':
-            home();
+            login();
             break
         case 'login':
             login();
