@@ -1,16 +1,16 @@
 export const login = () => {
   document.getElementById('root').innerHTML = 
     `
-      <div class="container" class="row">
-        <div class="form-container col-8 offset-2"> 
+      <div class="container-login" class="row">
+        <div class="form-login col-8 offset-2"> 
           <div class="row">
-              <div id="inputMail" class="input col-5 offset-3">
+              <div id="inputMail" class="input col-4 offset-4">
                 <input type="email" name="e-mail" id="userEmail" placeHolder="e-mail">
                 <p id="inputMailP" class="error-message"></p>
               </div>
             </div>
             <div class="row">
-              <div id="inputPass" class="input col-5 offset-3">
+              <div id="inputPass" class="input col-4 offset-4">
                 <input type="password" name="password" id="userPass" placeHolder="Contraseña">
                 <p id="inputPassP" class="error-message"></p>
               </div>
@@ -42,13 +42,14 @@ export const login = () => {
       document.getElementById('inputMailP').innerHTML = '';
     } else {
       document.getElementById('inputMailP').innerHTML = '<span style="font-weight: bold">*</span> ingrese un correo válido';
+      // window.location.hash = '#/login'; 
     }
     
     // Password error handling
     if(validatePass(passValue) === true){
       console.log('Password: ', passValue);
       document.getElementById('inputPassP').innerHTML = '';
-    } else {
+    }else {
       document.getElementById('inputPassP').innerHTML = '<span style="font-weight: bold">*</span> la contraseña no es válida';
     }
     
@@ -77,5 +78,5 @@ export const login = () => {
     }
     return true;
   }
-  
+
 };

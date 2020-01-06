@@ -1,0 +1,9 @@
+.container-login, .container_user-files {
+    position: relative;
+    top: 2em;
+    width: 100%;
+}
+
+.form-login, .form_user-files {
+    border: .2em solid black;
+}

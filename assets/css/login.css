@@ -1,17 +1,7 @@
-.container {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.form-container {
-    padding: 18% 0;
-    border: .2em solid black;
+.form-login {
     width: 80%;
     height: 80%;
+    padding: 14% 0;
 }
 
 .error-message {
