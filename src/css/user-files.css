@@ -16,8 +16,8 @@
     border: .15em solid black;
     display: flex; 
     align-items: center; 
-    justify-content: center;
-    padding: 1em;
+    justify-content: left;
+    /* padding: 1em; */
 }
 
 .search-date p {
