@@ -30,5 +30,5 @@ Otras opciones que barajo, es usar un framework de js para hacer un codigo más 
 
 Para ver los detalles de la planificación puedes ir a mi [Trello](https://trello.com/b/lZFseR7N/sodimac-challenge).
 
-### Desarrolladora: <br> **Paula Sáez (Agatha)**
+#### Desarrolladora: <br> **Paula Sáez (Agatha)**
 <br>
