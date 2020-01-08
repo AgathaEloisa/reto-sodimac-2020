@@ -10,7 +10,7 @@ export const userFiles = () => {
                     <input class="col-2" type="date"/><i class="fas fa-calendar-alt"></i>
 
                     <!-- make new file button -->
-                    <button id="btnSearch" class="btn btn-outline-secondary col-2 offset-3" type="submit">Buscar</button>
+                    <button id="btn-search" class="btn btn-outline-secondary col-2 offset-3" type="submit">Buscar</button>
                 <!-- 2input y 1btn -->
                 </div>           
                 <!-- <div class="form-table col-12"> -->
@@ -34,41 +34,8 @@ export const userFiles = () => {
             </div>
         </div>
     ` 
-
-// Modal add new file
-        document.getElementById('root').innerHTML +=
-        ` 
-        <div class="modal fade" id="btnNewFile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Crear archivo</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form id="new-element" method="POST" action="#/add-new-file">
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Nombre</label>
-                  <input type="text" class="form-control" id="recipient-name" name="title" autofocus required>
-                </div>
-                <div class="form-group">
-                  <label for="message-text" class="col-form-label">Contenido:</label>
-                  <textarea class="form-control" id="message-text" name="detail" required></textarea>
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button id="saveData" type="submit" class="btn btn-secondary" data-dismiss="modal" value="save new file">guardar </button>
-            </div>
-          </div>
-        </div>
-      </div>
-         `;
-
-        //  Print table with data elements
-         document.querySelector('#saveData').addEventListener('click', getData());
+        //  Print table with data elements. tiene que ir ligado al botón del filtro
+         document.querySelector('#btn-search').addEventListener('click', getData());
           function getData () {
             const xhttp = new XMLHttpRequest();
             xhttp.open('GET', 'files.json', true);
@@ -113,20 +80,38 @@ export const userFiles = () => {
                 }
               }
             }
-           }
+           };
 
-        //  let titleValue;
-        //  let contentValue;
-
-        // document.getElementById('saveData').addEventListener('click', () => {
-        //   titleValue = document.getElementById('recipient-name');
-        //   contentValue = document.getElementById('message-text');
-
-        //     console.log('title: ', titleValue.value);
-        //     console.log('content: ', contentValue.value);
-        // });
-
-
-// console.log('', gettingValues)
+           // Modal add new file
+        document.getElementById('root').innerHTML +=
+        ` 
+        <div class="modal fade" id="btnNewFile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Crear archivo</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="new-element" method="POST" action="#/add-new-file">
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Nombre</label>
+                  <input type="text" class="form-control" id="recipient-name" name="title" autofocus required>
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Contenido:</label>
+                  <textarea class="form-control" id="message-text" name="detail" required></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button id="saveData" type="submit" class="btn btn-secondary" data-dismiss="modal" value="save new file">guardar </button>
+            </div>
+          </div>  
+        </div>
+      </div>
+         `;
 
     };

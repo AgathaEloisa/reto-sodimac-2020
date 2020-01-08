@@ -50,7 +50,7 @@ export const login = () => {
       console.log('Password: ', passValue);
       document.getElementById('inputPassP').innerHTML = '';
     }else {
-      document.getElementById('inputPassP').innerHTML = '<span style="font-weight: bold">*</span> la contraseña no es válida';
+      document.getElementById('inputPassP').innerHTML = '<span style="font-weight: bold">*</span> la contraseña no es válida <br> debe contener más de 6 dígitos';
     }
     
     // Take user values and save data in local storage, and change the hash
