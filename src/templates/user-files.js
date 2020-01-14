@@ -44,6 +44,7 @@ export const userFiles = () => {
               if(this.readyState == 4 && this.status == 200){
                 let data = JSON.parse(this.responseText);
                 let res = document.querySelector('#res');
+                console.log(data)
                 res.innerHTML = '';
                 for(let elem of data){
                   res.innerHTML += 
@@ -52,16 +53,18 @@ export const userFiles = () => {
                     <th scope="row"> ${ elem.id } </th>
                     <td> ${ elem.title } </td>
                     <td>
-                        <a href="#/login" data-target="#login" data-toggle="modal">Detalle</a>
+                        <a href="#/login" data-target="#login${elem.id}" data-toggle="modal">Detalle</a>
                     </td>
                     </tr>
                   `
-                  document.getElementById('root').innerHTML +=
+                };   
+                  for(let elem of data){
+                  res.innerHTML +=
     
                   `   <!-- Modal -->
-                  <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered" role="document">
-                      <div class="modal-content">
+                  <div class="modal fade" id="login${elem.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
                           <div class="modal-header">
                           <h5 class="modal-title" id="exampleModalCenterTitle"> ${ elem.title } </h5>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -74,8 +77,8 @@ export const userFiles = () => {
                           <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                           </div>
-                      </div>
-                      </div>
+                          </div>
+                          </div>
                   </div>`;
                 }
               }
@@ -112,6 +115,7 @@ export const userFiles = () => {
           </div>  
         </div>
       </div>
+      
          `;
 
     };
